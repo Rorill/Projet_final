@@ -6,6 +6,8 @@ body {
     padding: 0;
 }
 
+
+/* start of header style */
 .header {
     display: flex;
     align-items: center;
@@ -74,3 +76,79 @@ body {
     font-size: 16px;
     color: #ffffff;
 }
+
+/* end of header style */
+
+/* start of widget next game style */
+.next-game {
+    background-color: #ff6600;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.next-game-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.next-game h2 {
+    margin: 0 0 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.game-info .team {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.vs {
+    font-size: 28px;
+    color: #1a1a1a;
+}
+
+.game-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.game-details .time,
+.game-details .location {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.join-now {
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.join-now:hover {
+    background-color: #333333;
+} 
+
+/* end of next game widget style */
