@@ -41,13 +41,6 @@ body {
     text-decoration: underline;
 }
 
-.search-bar input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    width: 300px;
-}
-
 .user-actions {
     display: flex;
     align-items: center;
@@ -80,27 +73,29 @@ body {
 /* end of header style */
 
 /* start of widget next game style */
-.next-game {
+.last-game {
     background-color: #ff6600;
     padding: 40px 20px;
     text-align: center;
     color: #ffffff;
     border-radius: 8px;
     margin: 20px 0;
+    width: 65vw;
+    height: 235px;
 }
 
-.next-game-content {
+.last-game-content {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.next-game h2 {
+.last-game h2 {
     margin: 0 0 20px;
     font-size: 32px;
     font-weight: bold;
 }
 
-.game-info {
+.last-game-info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,8 +105,8 @@ body {
     margin: 20px 0;
 }
 
-.game-info .team {
-    background-color: #1a1a1a;
+.last-game-info .team {
+    background-color: #ff6600;
     padding: 10px 20px;
     border-radius: 8px;
 }
@@ -121,7 +116,7 @@ body {
     color: #1a1a1a;
 }
 
-.game-details {
+.last-game-details {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -129,16 +124,16 @@ body {
     margin: 20px 0;
 }
 
-.game-details .time,
-.game-details .location {
-    background-color: #1a1a1a;
+.last-game-details .time,
+.last-game-details .location {
+    background-color: ff6600;
     padding: 10px 20px;
     border-radius: 8px;
 }
 
 .join-now {
     padding: 12px 24px;
-    background-color: #000000;
+    background-color: #ff6600;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -152,3 +147,101 @@ body {
 } 
 
 /* end of next game widget style */
+
+/* start of latest matches widget style */
+
+.latest-matches {
+    padding: 20px;
+    color: #ffffff;
+    width: 65vw;
+}
+
+.latest-matches h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter span {
+    font-size: 16px;
+}
+
+.filter select {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.match {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.match:hover {
+    background-color: #333333;
+}
+
+.match-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vs {
+    font-size: 18px;
+    color: #ff6600;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details .time,
+.details .location {
+    font-size: 16px;
+    background-color: #333333;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.view-details {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #ff6600;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.view-details:hover {
+    background-color: #e65c00;
+}
+
+/* end of the latest matches widget style */
