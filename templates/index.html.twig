@@ -1,7 +1,11 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% include "partials/header.html.twig" %}
+    <div class="grid grid-cols-8 mx-20">
+        <div class="bg-white col-start-1 col-end-3"></div>
+        <div class="col-start-4 col-end-9">
 {% include "lastGame.html.twig" %}
 {% include "latestMatches.html.twig" %}
-
+        </div>
+    </div>
 {% endblock %}
