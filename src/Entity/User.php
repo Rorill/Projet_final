@@ -5,12 +5,14 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTFIER_EMAIL', fields: ['email'])]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -34,7 +36,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Username = null;
+    private ?string $username = null;
 
     #[ORM\Column(length: 255)]
     private ?string $role = null;
@@ -44,6 +46,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $lastModified = null;
+
+    #[ORM\Column]
+    private bool $isVerified = false;
+
+    #[ORM\Column(length: 255)]
+    private ?string $team = null;
 
     public function getId(): ?int
     {
@@ -122,12 +130,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getUsername(): ?string
     {
-        return $this->Username;
+        return $this->username;
     }
 
     public function setUsername(string $Username): static
     {
-        $this->Username = $Username;
+        $this->username = $Username;
 
         return $this;
     }
@@ -135,6 +143,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRole(): ?string
     {
         return $this->role;
+
     }
 
     public function setRole(string $role): static
@@ -156,6 +165,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+
     public function getLastModified(): ?\DateTimeInterface
     {
         return $this->lastModified;
@@ -164,6 +174,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastModified(?\DateTimeInterface $lastModified): static
     {
         $this->lastModified = $lastModified;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setVerified(bool $isVerified): static
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getTeam(): ?string
+    {
+        return $this->team;
+    }
+
+    public function setTeam(string $team): static
+    {
+        $this->team = $team;
 
         return $this;
     }
