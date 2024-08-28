@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Teams;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -21,7 +23,10 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('username', TextType::class, [])
             ->add('email', EmailType::class, [])
-            ->add('team')
+            ->add('team', EntityType::class, [
+                'class' => Teams::class,
+                'choice_label' => 'name',
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [

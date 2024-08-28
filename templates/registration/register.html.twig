@@ -8,17 +8,16 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-    <h2>
         {{ form_row(registrationForm.username, {
             label: 'username'
-        })  }} </h2>
+        })  }}
         {{ form_row(registrationForm.email, {
     label: 'mail'
         }) }}
     {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-
+    {{ form_row(registrationForm.team) }}
     {{ form_row(registrationForm.agreeTerms) }}
 
     {{ form_end(registrationForm) }}
